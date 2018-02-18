@@ -1,0 +1,14 @@
+setwd("C:/Users/hyejin/Desktop/INTERN/data")
+install.packages("ggplots2")
+library(ggplot2)
+
+hrv <-read.csv("crdo-HRV.csv", header= TRUE)
+View(hrv)
+
+cl <- hrv[which(hrv$Language == "CL"),]
+cl
+
+
+hrv$span <- cut(hrv$span, breaks=c(38,150,255,435,470,617,626,629,633,653,728,893,896
+                      ,966,976,992,1055,1095:1096,1194,1404,1483,1587,1628,1647:1648,
+                      1927,2017,2123,2167,2196,2212,2214:2217,2235,2294,2310,2352,2358,2361,2377,2382,2431:2432,2434,2440,2442,2450,2465, Inf))
